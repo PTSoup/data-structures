@@ -2,26 +2,30 @@ var Stack = function() {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
 
-  var someInstance = {};
-  someInstance.sizeCount = 0;
+  var callStack = {};
+  callStack.someInstance = {};
+  callStack.storage = {};
+  callStack.sizeCount = 0;
 
-  _.extend(someInstance, stackMethods);
+  _.extend(callStack, stackMethods);
 
-
-  return someInstance;
-
+  return callStack;
 
 };
 
 var stackMethods = {
   // push an item to the stack
-  push: function() {
+  push: function(value) {
+    this.someInstance[this.sizeCount] = value;
     this.sizeCount++;
   },
 
   // pop an item from the stack
   pop: function() {
+    this.storage[0] = this.someInstance[this.sizeCount - 1];
+    delete this.someInstance[this.sizeCount - 1];
     this.sizeCount === 0 ? 0 : this.sizeCount--;
+    return this.storage[0];
   },
 
   // return the size of an item from the stack
@@ -29,12 +33,4 @@ var stackMethods = {
     return this.sizeCount;
   }
 
-
 };
-
-
-// be able to pass the methods into the function
-  // needs to take a value and place it in the stack
-    // needs to be able to remove that value from the stack (LIFO)
-      // return the removed property from the stack
-    // also needs to be able to return the size of the stack
