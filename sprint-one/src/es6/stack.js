@@ -13,6 +13,9 @@ class Stack {
   }
 
   //pop
+  pop() {
+    this.sizeCount === 0 ? 0 : this.sizeCount--;
+  }
 
   //size
   size() {
