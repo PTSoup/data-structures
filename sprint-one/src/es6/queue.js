@@ -3,15 +3,19 @@ class Queue {
   // but try not not reference your old code in writing the new style.
   constructor() {
     this.queueLine = {};
+    this.sizeCount = 0;
   }
 
   //enqueue
+  enqueue() {
+    this.sizeCount++;
+  }
 
   //dequeue
 
   //size
   size() {
-    return 0;
+    return this.sizeCount;
   }
 
 }
