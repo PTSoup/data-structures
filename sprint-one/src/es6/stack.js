@@ -7,20 +7,20 @@ class Stack {
     this.sizeCount = 0;
   }
 
-  // push
-  push() {
+  push(value) {
+    this.callStack[this.sizeCount] = value;
     this.sizeCount++;
+    return this.callStack;
   }
 
-  //pop
   pop() {
+    this.storage[0] = this.callStack[this.sizeCount - 1];
+    delete this.callStack[this.sizeCount - 1];
     this.sizeCount === 0 ? 0 : this.sizeCount--;
+    return this.storage[0];
   }
 
-  //size
   size() {
     return this.sizeCount;
   }
-
-
 }
