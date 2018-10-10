@@ -12,6 +12,9 @@ class Queue {
   }
 
   //dequeue
+  dequeue() {
+    this.sizeCount === 0 ? 0 : this.sizeCount--;
+  }
 
   //size
   size() {
