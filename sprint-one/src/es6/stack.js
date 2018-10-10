@@ -4,15 +4,19 @@ class Stack {
   constructor() {
     this.callStack = {};
     this.storage = {};
+    this.sizeCount = 0;
   }
 
   // push
+  push() {
+    this.sizeCount++;
+  }
 
   //pop
 
   //size
   size() {
-    return 0;
+    return this.sizeCount;
   }
 
 
