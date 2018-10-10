@@ -12,7 +12,7 @@ Queue.prototype.enqueue = function() {
 
 //dequeue
 Queue.prototype.dequeue = function() {
-
+  this.sizeCount === 0 ? 0 : this.sizeCount--;
 };
 
 
