@@ -15,6 +15,9 @@ var queueMethods = {
   },
 
   //dequeue
+  dequeue: function() {
+    this.sizeCount === 0 ? 0 : this.sizeCount--;
+  },
 
   //size
 
