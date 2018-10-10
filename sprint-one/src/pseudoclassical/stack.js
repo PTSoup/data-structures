@@ -14,7 +14,7 @@ Stack.prototype.push = function() {
 // pop
 
 Stack.prototype.pop = function() {
-
+  this.sizeCount === 0 ? 0 : this.sizeCount--;
 };
 
 // size
